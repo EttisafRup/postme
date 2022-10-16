@@ -1,7 +1,7 @@
 const path = require("path");
 const multer = require("multer");
 
-const UPLOAD_FOLD = "./uploads/"; // => Muloto ENV te thakbe
+const UPLOAD_FOLD = "./uploads/";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
