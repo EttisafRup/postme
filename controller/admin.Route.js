@@ -8,7 +8,6 @@ const User = new mongoose.model("User", modelSchema);
 
 adminRoute.get("/all/users", async (req, res) => {
   const allUsers = await User.find({}).select({
-    _id: 0,
     __v: 0,
   });
   res.json({

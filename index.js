@@ -4,6 +4,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+const checkAdmin = require("./middlewares/checkAdmin");
+app.use("/image", checkAdmin, express.static("./uploads/"));
 
 // ?>>= Enable CORS
 const cors = require("cors");
@@ -17,8 +19,6 @@ const MONGODB_URL = process.env.MONGODB_URL;
 const userRoute = require("./controller/user.Route");
 app.use(userRoute);
 const adminRoute = require("./controller/admin.Route");
-const checkAdmin = require("./middlewares/checkAdmin");
-
 app.use("/admin", checkAdmin, adminRoute);
 
 // => MongoDB Connection

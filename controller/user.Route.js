@@ -10,7 +10,7 @@ const modelSchema = require("../models/mongo.Schema");
 const User = new mongoose.model("User", modelSchema);
 
 userRoute.get("/", (req, res) => {
-  res.json({ message: "Hello" });
+  res.status(200).sendFile(path.join(__dirname, "../views/index.html"));
 });
 
 userRoute.get("/postme", (req, res) => {

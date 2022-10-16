@@ -6,14 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>EttiCodes - Registration Fourm</title>
     <script src="https://cdn.tailwindcss.com"></script>
-	<script src="https://use.fontawesome.com/3a2eaf6206.js"></script>
+    <script src="https://use.fontawesome.com/3a2eaf6206.js"></script>
     <style>
       .gradient {
-        background: linear-gradient(
-          30deg,
-          #ff0000ec 10%,
-          #000 35%
-        );
+        background: linear-gradient(30deg, #ff0000ec 10%, #000 35%);
       }
       .avatar-div {
         text-align: center;
@@ -30,33 +26,33 @@
       .avatar-label {
         cursor: pointer;
       }
-	  #break{
-		margin-top: 0.5rem;
-	  }
+      #break {
+        margin-top: 0.5rem;
+      }
       #imageName {
         color: white;
-		text-shadow: 0 0 0.3rem white ;
+        text-shadow: 0 0 0.3rem white;
       }
-	  .fa{
-		border-radius: 50%;
-		border: 2px solid white;
-		padding: 13px;
-	  }
-	  .submit-button{
-		background-color: black;
-		color: white;
-		padding: 0.7rem;
-		/* text-shadow: 0px 0px 3px white; */
-		font-size: 19px;
-		transition: 0.1s;
-	  }
-	  .submit-button:hover{
-		margin-top: -4px;
-		color: white;
-		padding: 0.7rem;
-		text-shadow: 0px 0px 10px white;
-		font-size: 21px;
-	  }
+      .fa {
+        border-radius: 50%;
+        border: 2px solid white;
+        padding: 13px;
+      }
+      .submit-button {
+        background-color: black;
+        color: white;
+        padding: 0.7rem;
+        /* text-shadow: 0px 0px 3px white; */
+        font-size: 19px;
+        transition: 0.1s;
+      }
+      .submit-button:hover {
+        margin-top: -4px;
+        color: white;
+        padding: 0.7rem;
+        text-shadow: 0px 0px 10px white;
+        font-size: 21px;
+      }
     </style>
   </head>
   <body class="bg-gray-200">
@@ -77,16 +73,14 @@
 
           <div class="avatar-div">
             <label class="avatar-label" for="inputTag">
-				<i class="fa fa-2x fa-camera">
-				</i>
-				<p id="break"></p>
-			<p id="unselected">Choose a Picture</p>
-				<input type="file" name="avatar" id="inputTag" required />
-				<p id="break"></p>
+              <i class="fa fa-2x fa-camera"> </i>
+              <p id="break"></p>
+              <p id="unselected">Choose a Picture</p>
+              <input type="file" name="avatar" id="inputTag" required />
+              <p id="break"></p>
               <span id="imageName"></span>
             </label>
           </div>
-
 
           <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
             <svg
@@ -164,7 +158,7 @@
             id="save"
             class="submit-button w-full font-semibold mb-2"
           >
-           &rarr; Let's go! &larr;
+            &rarr; Let's go! &larr;
           </button>
         </form>
 
@@ -208,11 +202,11 @@
 
       let input = document.getElementById("inputTag");
       let imageName = document.getElementById("imageName");
-	  let unselectedText = document.getElementById("unselected");
+      let unselectedText = document.getElementById("unselected");
       input.addEventListener("change", () => {
         let inputImage = document.querySelector("input[type=file]").files[0];
-		unselectedText.style.display = "none";
-        imageName.innerText = "Photo : " +inputImage.name;
+        unselectedText.style.display = "none";
+        imageName.innerText = "Photo : " + inputImage.name;
       });
     </script>
   </body>

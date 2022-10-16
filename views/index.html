@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POSTme - Peoples around us in a API</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+    </style>
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      /* width */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(#b30000, #f19e10, #da00fb);
+        border-radius: 10px;
+        transition: 0.3s;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        transition: 0.3s;
+        background: #b30000;
+      }
+
+      body {
+        font-family: "Josefin Sans", sans-serif;
+        background-color: #121212;
+      }
+      header::before {
+        content: "";
+        position: absolute;
+        background: url(./ok.jpeg) no-repeat center center/cover;
+        height: 100%;
+        width: 100%;
+        z-index: -2;
+      }
+      .covv {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.575);
+        z-index: -2;
+      }
+      .show,
+      .search {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      footer {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="show"></div>
+
+
+    <script>
+      async function okay() {
+  const url = `http://localhost:5050/api/users`;
+  const res = await fetch(url);
+  const data = await res.json();
+  console.log(data.users);
+  const show = document.querySelector(".show");
+  const markup = data.users.map((paramee) => {
+    const loopCard = `
+    <div class="sm:w-full md:w-1/2 p-4">
+    <div class="bg-gray-100 p-6 rounded-lg">
+        <div class="flex object-center justify-center">
+      <img class="h-64 rounded object-cover w-auto object-center mb-6" src="https://github.com/EttisafRup/postme/blob/main/uploads/${paramee.avatar}?raw=true" alt="${paramee.avatar} Image">
+      </div>
+      <h3 class="tracking-widest text-red-500 title-font">${paramee.profession}</h3>
+      <h2 class="text-lg text-gray-900 font-medium title-font mb-4"> &rarr; ${paramee.username}</h2>
+      <p class="leading-relaxed text-base"><strong>Facebook : </strong> ${paramee.facebook}.</p>
+  
+      <div class="p-2 my-3">
+      <a target="_blank" href="https://www.facebook.com/search/top/?q=${paramee.facebook}"><button class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Follow</button></a>
+    </div>
+      </div>
+    </div>
+    `;
+    return loopCard;
+  });
+  show.innerHTML = markup.join("");
+}
+okay();
+    </script>
+  </body>
+</html>
