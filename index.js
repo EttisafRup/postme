@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 const checkAdmin = require("./middlewares/checkAdmin");
-app.use("/image", checkAdmin, express.static("./uploads/"));
+app.use("/image", express.static("./uploads/"));
 
 // ?>>= Enable CORS
 const cors = require("cors");
