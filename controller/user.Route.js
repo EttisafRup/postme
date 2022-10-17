@@ -10,11 +10,11 @@ const modelSchema = require("../models/mongo.Schema");
 const User = new mongoose.model("User", modelSchema);
 
 userRoute.get("/", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "../views/index.html"));
+  res.status(200).render("index");
 });
 
 userRoute.get("/postme", (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, "../views/post.html"));
+  res.status(200).render("post");
 });
 
 userRoute.post("/postme", upload.single("avatar"), async (req, res) => {
@@ -25,11 +25,14 @@ userRoute.post("/postme", upload.single("avatar"), async (req, res) => {
       profession: req.body.profession,
       facebook: req.body.facebook,
     });
+
+    avatar = "image/" + req.avatarID;
+    username = req.body.username;
+    profession = req.body.profession;
+    facebook = req.body.facebook;
+
     await newUser.save();
-    res.json({
-      success: "Successfully Created!",
-      user: newUser,
-    });
+    res.render("success");
   } catch (err) {
     res.json({ message: err.message });
   }

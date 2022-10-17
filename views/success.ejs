@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>POSTme - Post yourself now!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://use.fontawesome.com/3a2eaf6206.js"></script>
+    <style>
+      .gradient {
+        background: linear-gradient(30deg, #ff0000ec 10%, #000 35%);
+      }
+      .avatar-div {
+        text-align: center;
+        padding: 3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      #inputTag {
+        display: none;
+      }
+      .avatar-label {
+        cursor: pointer;
+      }
+      #break {
+        margin-top: 0.5rem;
+      }
+      #imageName {
+        color: white;
+        text-shadow: 0 0 0.3rem white;
+      }
+      .fa {
+        border-radius: 50%;
+        border: 2px solid white;
+        padding: 13px;
+      }
+      .submit-button {
+        background-color: black;
+        color: white;
+        padding: 0.7rem;
+        /* text-shadow: 0px 0px 3px white; */
+        font-size: 19px;
+        transition: 0.1s;
+      }
+      .submit-button:hover {
+        margin-top: -4px;
+        color: white;
+        padding: 0.7rem;
+        text-shadow: 0px 0px 10px white;
+        font-size: 21px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200">
+    <p class="text-black text-2xl my-3 text-center"><span class="text-green-800">&check; </span>Registration was <span class="text-green-600">Successful</span></p>
+
+    <div class="flex align-center justify-center">
+        <div class="w-80 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <div class="flex object-center justify-center">f
+              <img class="h-64 rounded object-cover w-auto object-center mb-6" src="<%= avatar %>" alt="<%= avatar %>">
+              </div>
+              <h3 class="tracking-widest text-red-600 title-font"><%= profession %></h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4"> &rarr; <%= username %></h2>
+              <p class="leading-relaxed text-base"><strong>Facebook : </strong> <%= facebook %>.</p>
+              </div>
+            </div>
+    </div>
+
+    <script>
+      setTimeout(() => {
+        location.href = "/";
+      }, 5000);
+    </script>
+  </body>
+</html>

@@ -7,6 +7,9 @@ app.use(express.urlencoded({ extended: true }));
 const checkAdmin = require("./middlewares/checkAdmin");
 app.use("/image", express.static("uploads"));
 
+// ?= View Engine
+app.set("view engine", "ejs");
+
 // ?>>= Enable CORS
 const cors = require("cors");
 app.use(cors());
