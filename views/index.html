@@ -29,7 +29,7 @@
 
       /* Handle */
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(#b30000, #f19e10, #da00fb);
+        background: linear-gradient(#b30000, #ff00ea, #fff);
         border-radius: 10px;
         transition: 0.3s;
       }
@@ -64,14 +64,75 @@
         display: flex;
         flex-wrap: wrap;
       }
+      svg{
+        font-size: 10px;
+      }
       footer {
         background-color: #fff;
       }
     </style>
   </head>
   <body>
+
+    <header class="body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
+          <span class="text-red-700 text-xl hover:text-white transition">
+            &fcy;
+          </span>
+          <label class="ml-3 text-xl text-white">P<span class="transition cursor-pointer text-red-600 hover:text-white">O</span>STme</label>
+        </a>
+        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        </nav>
+<div class="md:flex">
+        <a href="/postme"> 
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 mx-2 focus:outline-none hover:bg-red-500 hover:text-white transition rounded text-base text-black mt-4 md:mt-0">
+          <span class="text-red-800 text-2xl">
+            &fcy;
+          </span>
+          Post Yours Now 
+        </a>
+        <a href="/api/users">
+        </button>
+        <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-red-500 hover:text-white transition rounded text-base text-black mt-4 md:mt-0">
+          Get free <span class="text-red-800"> API</span>
+        </a>
+        </button>
+      </div>
+      </div>
+    </header>
+    <div class="text-center my-5 text-xl">
+    <a class="mr-5 text-white hover:text-red-500 transition cursor-pointer">Make Yourself Visible among others here!</a>
+  </div>
+
     <div class="show"></div>
 
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <img src="https://avatars.githubusercontent.com/u/107711625?v=4" style="width: 4rem; border-radius:50%" alt="Xtend Ettisaf">
+          </svg>
+          <span class="ml-3 text-xl">P<span class="text-red-600">O</span>STme</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"> github repository—
+          <a href="https://github.com/EttisafRup/postme" target="_blank" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@postme</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          
+          <a target="_blank" href="https://www.facebook.com/xtend.etti.5/" class="text-gray-500 hover:text-blue-700 transition">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/ettisafxrup" class="ml-3 text-gray-500 hover:text-red-700 transition">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </footer>
 
     <script>
       async function okay() {
@@ -82,17 +143,17 @@
   const show = document.querySelector(".show");
   const markup = data.users.map((paramee) => {
     const loopCard = `
-    <div class="sm:w-full md:w-1/2 p-4">
+    <div class="w-80 md:w-1/2 p-4">
     <div class="bg-gray-100 p-6 rounded-lg">
         <div class="flex object-center justify-center">
       <img class="h-64 rounded object-cover w-auto object-center mb-6" src="image/${paramee.avatar}" alt="${paramee.avatar} Image">
       </div>
-      <h3 class="tracking-widest text-red-500 title-font">${paramee.profession}</h3>
+      <h3 class="tracking-widest text-red-600 title-font">${paramee.profession}</h3>
       <h2 class="text-lg text-gray-900 font-medium title-font mb-4"> &rarr; ${paramee.username}</h2>
       <p class="leading-relaxed text-base"><strong>Facebook : </strong> ${paramee.facebook}.</p>
   
       <div class="p-2 my-3">
-      <a target="_blank" href="https://www.facebook.com/search/top/?q=${paramee.facebook}"><button class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Follow</button></a>
+      <a target="_blank" href="https://www.facebook.com/search/top/?q=${paramee.facebook}"><button class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg"> &telrec; Follow</button></a>
     </div>
       </div>
     </div>
